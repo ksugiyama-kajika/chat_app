@@ -1,5 +1,9 @@
-<h1>Chat room</h1>
-<div id='messages'>
+<%# data-room_idを使ってjs側で部屋を見分ける %>
+<div id='messages' data-room_id="<%= @room.id %>">
   <%# render partial: 'messages/message', collection: @messages %>
   <%= render @messages %>
 </div>
+
+<%# チャット入力欄 %>
+<%= label_tag :content, 'Say something:' %>
+<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>

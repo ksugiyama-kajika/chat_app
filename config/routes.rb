@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'rooms/show'
+  
+  # rootはRoom一覧画面にしておく
+  root 'rooms#index'
+  
+  resources :rooms, only: %i[show]
 end

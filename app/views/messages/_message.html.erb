@@ -1,3 +1,5 @@
 <div class='message'>
-  <p><%= message.content %></p>
+  <%# 投稿者を特定できるようにメールアドレスを表示させておく %>
+  <%# render @messages で呼び出ししている %>
+  <p><%= "#{message.user.email}: #{message.content}" %></p>
 </div>
